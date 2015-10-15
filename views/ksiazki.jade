@@ -1,0 +1,31 @@
+extends layoutLoggedIn
+
+block content
+  h1= title
+  br
+  table
+    tr
+      th ID
+      th Tytuł
+      th Autor
+      th Egzemplarze
+      th Usuń
+      th Zmień ilość
+    each ksiazka in ksiazki
+      tr
+        td= ksiazka.id
+        td= ksiazka.tytul
+        td= ksiazka.autor
+        td= ksiazka.ilosc
+        td
+          form(method='post', action='ksiazka/'+ksiazka.id+'/usun')
+            input(type='submit', value='Usuń')
+        td
+          form.ilosc(method='post', action='ksiazka/'+ksiazka.id+'/zwieksz')
+            input(type='submit', value='+') 
+          form.ilosc(method='post', action='ksiazka/'+ksiazka.id+'/zmniejsz')
+            input(type='submit', value='-' disabled=ksiazka.ilosc==0)
+  form.button(method='get' action='/dodaj/ksiazke')
+    input(type='submit', value='Dodaj nową ksiazkę')
+  form.button(method='get' action='/dodaj/wypozyczenie')
+    input(type='submit', value='Wypożycz ksiązkę')

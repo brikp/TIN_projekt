@@ -1,0 +1,20 @@
+extends layoutLoggedIn
+
+block content
+  h1= title
+  table
+    tr
+      th ID
+      th ID Klienta
+      th ID Książki
+      th Usuń
+    each wypozyczenie in wypozyczenia
+      tr
+        td= wypozyczenie.id
+        td= wypozyczenie.klient
+        td= wypozyczenie.ksiazka
+        td 
+          form(method='post', action='wypozyczenie/'+wypozyczenie.id+'/usun')
+            input(type='submit', value='Usuń')
+  form.button(method='get' action='/dodaj/wypozyczenie')
+    input(type='submit', value='Dodaj wypozyczenie')

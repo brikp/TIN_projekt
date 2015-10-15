@@ -1,0 +1,22 @@
+extends layoutLoggedIn
+
+block content
+  form(action='/klient/'+klient.id+'/edytuj', method='post')
+    label(for='id') ID: 
+      input(type='text' name='id', value=klient.id, disabled='true')
+      br 
+    label(for='telefon') Telefon: 
+      input(type='text' name='telefon', value=klient.telefon)
+      br 
+    label(for='id_osoby') ID Osoby: 
+      input(type='text' name='id_osoby', value=klient.id_osoby, disabled='true')
+      br
+    input(type='submit' value='Zapisz')
+    br
+  a(href='/ksiazki') Lista ksiazek 
+  br
+  a(href='/osoby') Lista osob
+  br
+  a(href='/klienci') Lista klientow
+  br
+  a(href='/wypozyczenia') Lista wypozyczen

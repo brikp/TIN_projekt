@@ -1,0 +1,15 @@
+extends layoutNotLoggedIn
+
+block content
+  h1= title
+  form.lineUp(action='/login', method='post')
+    p.lineup
+      label.lineup(for='login') Nazwa użytkownika: 
+      input.lineup(type='text' name='login' autofocus)
+      br 
+    p.lineup
+      label.lineup(for='haslo') Hasło: 
+      input.lineup(type='password' name='haslo')
+      br.lineup
+    input(type='submit' value='Zaloguj')
+    br

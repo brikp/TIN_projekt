@@ -1,0 +1,15 @@
+extends layoutLoggedIn
+
+block content
+  ul
+    li= 'ID: ' + ksiazka.id
+    li= 'Tytul: ' + ksiazka.tytul
+    li ID Autora: 
+      a(href='/osoba/'+ksiazka.id_autora)= ksiazka.id_autora
+  a(href='/ksiazki') Lista ksiazek 
+  br
+  a(href='/osoby') Lista osob
+  br
+  a(href='/klienci') Lista klientow
+  br
+  a(href='/wypozyczenia') Lista wypozyczen

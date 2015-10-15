@@ -1,0 +1,16 @@
+extends layoutNotLoggedIn
+
+block content
+  h1= title
+  table
+    tr
+      th ID
+      th Tytuł
+      th Autor
+      th Egzemplarze
+    each ksiazka in ksiazki
+      tr
+        td= ksiazka.id
+        td= ksiazka.tytul
+        td= ksiazka.autor
+        td= ksiazka.ilosc

@@ -1,0 +1,18 @@
+extends layoutLoggedIn
+
+block content
+  h1= title
+  form.lineup(action='/wypozyczenie/dodaj', method='post')
+    p.lineup
+      label.lineup(for='id_klienta') Klient: 
+      select.lineup(name='nr_klienta')
+        each klient in klienci
+          option(value=klient.id)= klient.nazwa 
+    p.lineup
+      label.lineup(for='id_ksiazki') Ksiazka: 
+      select.lineup(name='nr_ksiazki')
+        each ksiazka in ksiazki
+          option(value=ksiazka.id)= ksiazka.tytul 
+    br
+    input(type='submit' value='Dodaj')
+    br

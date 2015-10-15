@@ -1,0 +1,22 @@
+doctype html
+html
+	head
+		title= title
+		link(rel='stylesheet', href='/stylesheets/style.css')
+	body
+		div#container
+			div#header
+				h1 Biblioteka
+			div#navigation
+				ul
+					li.left
+						a(href='/ksiazki') Książki
+						a(href='/osoby') Osoby
+						a(href='/klienci') Klienci
+						a(href='/wypozyczenia') Wypożyczenia
+					li.right
+						a(href='/logout') Wyloguj
+			div#content
+					block content
+			div#footer
+				p Bartłomiej Karczmarczyk, s8358

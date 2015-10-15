@@ -1,0 +1,21 @@
+extends layoutLoggedIn
+
+block content
+  h1= title
+  table
+    tr
+      th ID
+      th Osoba
+      th Telefon
+      th Usuń
+    each klient in klienci
+      tr
+        td= klient.id
+        td= klient.nazwa
+        td= klient.telefon
+        td 
+          form(method='post', action='klient/'+klient.id+'/usun')
+            input(type='submit', value='Usuń')
+  form.button(method='get' action='/dodaj/klienta')
+    input(type='submit', value='Dodaj klienta')
+  

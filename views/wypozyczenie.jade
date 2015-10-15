@@ -1,0 +1,16 @@
+extends layoutLoggedIn
+
+block content
+  ul
+    li= 'ID: ' + wypozyczenie.id
+    li ID Ksiazki: 
+      a(href='/ksiazka/'+wypozyczenie.id_ksiazki)= wypozyczenie.id_ksiazki
+    li ID Klienta: 
+      a(href='/klient/'+wypozyczenie.id_klienta)= wypozyczenie.id_klienta
+  a(href='/ksiazki') Lista ksiazek 
+  br
+  a(href='/osoby') Lista osob
+  br
+  a(href='/klienci') Lista klientow
+  br
+  a(href='/wypozyczenia') Lista wypozyczen

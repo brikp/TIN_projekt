@@ -1,0 +1,22 @@
+extends layoutLoggedIn
+
+block content
+  form(action='/ksiazka/'+ksiazka.id+'/edytuj', method='post')
+    label(for='id') ID: 
+      input(type='text' name='id', value=ksiazka.id, disabled='true')
+      br 
+    label(for='tytul') Tytul: 
+      input(type='text' name='tytul', value=ksiazka.tytul)
+      br 
+    label(for='id_autora') ID_Autora: 
+      input(type='text' name='id_autora', value=ksiazka.id_autora, disabled='true')
+      br
+    input(type='submit' value='Zapisz')
+    br
+  a(href='/ksiazki') Lista ksiazek 
+  br
+  a(href='/osoby') Lista osob
+  br
+  a(href='/klienci') Lista klientow
+  br
+  a(href='/wypozyczenia') Lista wypozyczen

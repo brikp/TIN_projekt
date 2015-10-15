@@ -1,0 +1,14 @@
+extends layoutLoggedIn
+
+block content
+  form.lineUp(action='/osoba/'+osoba.id+'/edytuj', method='post')
+    p.lineup
+      label.lineup(for='imie') Imię: 
+      input.lineup(type='text' name='imie' value=osoba.imie)
+      br 
+    p.lineup
+      label.lineup(for='nazwisko') Nazwisko: 
+      input.lineup(type='text' name='nazwisko' value=osoba.nazwisko)
+      br.lineup
+    input(type='submit' value='Zapisz')
+    br

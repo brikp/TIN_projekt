@@ -1,0 +1,24 @@
+extends layoutLoggedIn
+
+block content
+  h1= title
+  table
+    tr
+      th ID
+      th Imię
+      th Nazwisko
+      th Edytuj
+      th Usuń
+    each osoba in osoby
+      tr
+        td= osoba.id
+        td= osoba.imie
+        td= osoba.nazwisko
+        td 
+          form(method='get', action='osoba/'+osoba.id+'/edytuj')
+            input(type='submit', value='Edytuj')
+        td 
+          form(method='post', action='osoba/'+osoba.id+'/usun')
+            input(type='submit', value='Usuń')
+   form.button(method='get' action='/dodaj/osobe')
+    input(type='submit', value='Dodaj osobę')

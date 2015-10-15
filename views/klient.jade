@@ -1,0 +1,15 @@
+extends layoutLoggedIn
+
+block content
+  ul
+    li= 'ID: ' + klient.id
+    li ID Osoby: 
+      a(href='/osoba/'+klient.id_osoby)= klient.id_osoby
+    li= 'Telefon: ' + klient.telefon
+  a(href='/ksiazki') Lista ksiazek 
+  br
+  a(href='/osoby') Lista osob
+  br
+  a(href='/klienci') Lista klientow
+  br
+  a(href='/wypozyczenia') Lista wypozyczen

@@ -1,0 +1,15 @@
+extends layoutLoggedIn
+
+block content
+  h1= title
+  form.lineup(action='/osoba/dodaj', method='post')
+    p.lineup
+      label.lineup(for='imie') Imie: 
+      input.lineup(type='text' name='imie')
+      br 
+    p.lineup
+      label.lineup(for='nazwisko') Nazwisko: 
+      input.lineup(type='text' name='nazwisko')
+      br
+    input(type='submit' value='Dodaj')
+    br

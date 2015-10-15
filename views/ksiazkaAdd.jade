@@ -1,0 +1,17 @@
+extends layoutLoggedIn
+
+block content
+  h1= title
+  form.lineup(action='/ksiazka/dodaj', method='post')
+    p.lineup
+      label.lineup(for='tytul') Tytułker: 
+      input.lineup(type='text' name='tytul')
+      br 
+    p.lineup
+      label.lineup(for='nr_autora') Autor:
+      select.lineup(name='nr_autora')
+        each autor in autorzy
+          option(value=autor.id)= autor.nazwa
+      br
+    input.lineup(type='submit' value='Dodaj')
+    br

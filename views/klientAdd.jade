@@ -1,0 +1,17 @@
+extends layoutLoggedIn
+
+block content
+  h1= title
+  form.lineup(action='/klient/dodaj', method='post')
+    p.lineup
+      label.lineup(for='nr_osoby') Osoba:
+      select.lineup(name='nr_osoby')
+        each osoba in osoby
+          option(value=osoba.id)= osoba.nazwa + ' ' + osoba.id
+      br
+    p.lineup
+      label.lineup(for='telefon') Telefon: 
+      input.lineup(type='text' name='telefon')
+      br
+    input.lineup(type='submit' value='Dodaj')
+    br
